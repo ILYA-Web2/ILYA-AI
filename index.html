@@ -3,206 +3,433 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ILYA AI</title>
+    <title>ILYA AI - القوة المطلقة للذكاء الاصطناعي</title>
+    <!-- استدعاء خطوط Google الفخمة -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+    <!-- استدعاء أيقونات البرمجة عالية الأداء من Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Reem+Kufi:wght@500;700&display=swap');
-        
+        :root {
+            --bg-dark: #060813;
+            --purple-neon: #a855f7;
+            --purple-dark: #6b21a8;
+            --red-neon: #ef4444;
+            --red-dark: #991b1b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --glass-bg: rgba(15, 23, 42, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.07);
+        }
+
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #0f172a;
-            color: #f8fafc;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             font-family: 'Cairo', sans-serif;
             line-height: 1.8;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 750px;
-            margin: 0 auto;
-            padding: 50px 20px;
-        }
-
-        /* الخط الكوفي للعناوين الرئيسية */
-        h1 {
-            font-family: 'Reem Kufi', sans-serif;
-            font-size: 3.2rem;
-            color: #f59e0b;
-            margin: 0 0 10px 0;
-            font-weight: 700;
-        }
-
-        h2 {
-            font-family: 'Reem Kufi', sans-serif;
-            font-size: 1.6rem;
-            color: #ffffff;
-            margin-top: 0;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #334155;
-            padding-bottom: 8px;
-        }
-
-        .tagline {
-            font-size: 1.3rem;
-            color: #94a3b8;
-            margin-bottom: 40px;
-            font-weight: 600;
-        }
-
-        /* بطاقات مخرجات الفحص الجاهزة والمختصرة */
-        .card {
-            background-color: #1e293b;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            text-align: right;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-            border-right: 5px solid #f59e0b;
-        }
-
-        .card p {
-            margin: 0 0 15px 0;
-            color: #cbd5e1;
-            font-size: 1.1rem;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        li {
-            margin-bottom: 12px;
-            font-size: 1.05rem;
-            color: #e2e8f0;
-            padding-right: 25px;
+            overflow-x: hidden;
             position: relative;
         }
 
-        li::before {
-            content: "✘";
-            position: absolute;
-            right: 0;
-            color: #f59e0b;
-            font-weight: bold;
+        /* تأثير الخلفية الحية والجسيمات النيونية المتوهجة (Particles Effect) */
+        body::before, body::after {
+            content: "";
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(140px);
+            opacity: 0.35;
+            pointer-events: none;
+            animation: floatGlow 12s infinite alternate ease-in-out;
         }
 
-        /* حماية الكلمات الإنجليزية من التشوه */
+        body::before {
+            background: radial-gradient(circle, var(--purple-neon), transparent);
+            top: -10%;
+            left: -10%;
+        }
+
+        body::after {
+            background: radial-gradient(circle, var(--red-neon), transparent);
+            bottom: -10%;
+            right: -10%;
+            animation-delay: 6s;
+        }
+
+        @keyframes floatGlow {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(40px) scale(1.15); }
+        }
+
+        /* خطوط برمجية متحركة خفيفة بالخلفية */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(168, 85, 247, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(239, 68, 68, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 70px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* الهيدر والعناوين الكوفية الفخمة */
+        header {
+            margin-bottom: 50px;
+            animation: fadeInDown 1.2s ease-out;
+        }
+
+        h1 {
+            font-family: 'Reem Kufi', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--purple-neon) 70%, var(--red-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.4));
+        }
+
+        .tagline {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .tagline span {
+            color: var(--red-neon);
+            position: relative;
+        }
+
+        /* بطاقات الزجاج السائل الشفاف تماماً ومثالي (Liquid Glassmorphism) */
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            text-align: right;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(255,255,255,0.05);
+            transform: translateY(0);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        /* تأثير التوهج النيوني عند تمرير الماوس فوق البطاقة */
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(168, 85, 247, 0.3);
+            box-shadow: 0 30px 50px rgba(139, 92, 246, 0.15);
+        }
+
+        /* تأثير خط النيون المتدرج المخفي في أعلى كل بطاقة */
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--purple-neon), var(--red-neon));
+            opacity: 0.8;
+        }
+
+        /* عناوين البطاقات الكوفية */
+        h2 {
+            font-family: 'Reem Kufi', sans-serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 500;
+        }
+
+        h2 i {
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--purple-neon), var(--red-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            font-size: 1.15rem;
+            font-weight: 400;
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        /* تنسيق القوائم والأيقونات البرمجية الاحترافية */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        li {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            padding-right: 35px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        /* الأيقونات البرمجية بديلة الرموز التعبيرية */
+        li .li-icon {
+            position: absolute;
+            right: 0;
+            top: 4px;
+            color: var(--purple-neon);
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        li:hover .li-icon {
+            transform: rotate(15deg) scale(1.1);
+            color: var(--red-neon);
+        }
+
+        /* حماية الكلمات الإنجليزية والتقنية من التداخل والتشوه */
         .en {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
             direction: ltr;
             display: inline-block;
             color: #38bdf8;
-            font-weight: bold;
-            padding: 0 4px;
+            font-weight: 700;
+            background: rgba(56, 189, 248, 0.1);
+            padding: 1px 8px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            letter-spacing: 0.5px;
+            margin: 0 2px;
         }
 
         .en-bold {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             direction: ltr;
             display: inline-block;
-            color: #f59e0b;
-            font-weight: bold;
+            color: var(--f59e0b);
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
-        /* أزرار الروابط والحقوق */
+        /* منطقة الروابط والحقوق الفخمة */
         .links-title {
             font-family: 'Reem Kufi', sans-serif;
-            font-size: 1.4rem;
-            color: #f59e0b;
-            margin-top: 40px;
-            margin-bottom: 20px;
+            font-size: 1.6rem;
+            color: #ffffff;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .links-title i {
+            color: var(--red-neon);
+            animation: pulse 2s infinite;
         }
 
         .btn-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            max-width: 400px;
+            gap: 15px;
+            max-width: 450px;
             margin: 0 auto;
         }
 
+        /* أزرار زجاجية سائلة متوهجة نيونياً */
         .btn {
-            display: block;
-            padding: 14px;
-            color: #0f172a;
-            background-color: #f59e0b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 25px;
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--purple-dark), var(--red-dark));
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn i {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
         }
 
         .btn:hover {
-            background-color: #d97706;
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, var(--purple-neon), var(--red-neon));
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(168, 85, 247, 0.3);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        .btn:hover i {
+            transform: translateX(-5px);
         }
 
         .btn-secondary {
-            background-color: #334155;
-            color: #f8fafc;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
-            background-color: #475569;
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--purple-neon);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
         }
 
         footer {
-            margin-top: 60px;
-            font-size: 0.9rem;
-            color: #475569;
+            margin-top: 70px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        /* تأثيرات الأنيميشن الاحترافية */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); filter: blur(10px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); filter: blur(10px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.08); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        /* تجاوب التصميم مع الهواتف الذكية بشكل مطلق */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.8rem; }
+            .tagline { font-size: 1.1rem; }
+            .card { padding: 25px; }
+            h2 { font-size: 1.5rem; }
+            .btn { font-size: 1rem; padding: 14px 20px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- شبكة برمجية في الخلفية -->
+    <div class="bg-grid"></div>
+
     <div class="container">
         
-        <!-- الهيدر الرئيسي -->
-        <h1>ILYA AI</h1>
-        <div class="tagline">منصة تجمع اقوة نماذج ذكاء الاصطناعي</div>
+        <!-- الهيدر والوجهة الإعلانية الرئيسية للمشروع -->
+        <header>
+            <h1>ILYA AI</h1>
+            <div class="tagline">منصة تجمع <span>أقوى</span> نماذج الذكاء الاصطناعي العالمية</div>
+        </header>
 
-        <!-- مقدمة المشروع -->
-        <div class="card" style="border-right-color: #38bdf8;">
-            <h2>🤖 عن المنصة</h2>
-            <p>بوابة ذكية مدمجة ومبسطة تمنحك الوصول الفوري لأقوى تقنيات الذكاء الاصطناعي في العالم لإنشاء النصوص، تطوير البرمجيات، وتوليد الصور مجاناً وبأعلى استقرار.</p>
+        <!-- بطاقة: عن المنصة (زجاجية سائلة دون المربع الأزرق) -->
+        <div class="card">
+            <h2><i class="fa-solid fa-terminal"></i> عن المنصة</h2>
+            <p>بوابة ذكية مدمجة ومبسطة تمنحك الوصول الفوري لأقوى تقنيات الذكاء الاصطناعي في العالم لإنشاء النصوص، تطوير البرمجيات، وتوليد الصور مجاناً وبأعلى استقرار عالي الكفاءة.</p>
         </div>
 
-        <!-- نماذج النصوص والصور مدمجة ومختصرة جداً -->
+        <!-- بطاقة: النخبة من النماذج المدعومة -->
         <div class="card">
-            <h2>🧠 النخبة من النماذج المدعومة</h2>
+            <h2><i class="fa-solid fa-microchip"></i> النخبة من النماذج المدعومة</h2>
             <ul>
-                <li><strong>معالجة النصوص والبرمجة:</strong> الوصول الفوري النماذج العالمية الأقوى مع كل نسخها <span class="en">GPT-4o</span> و <span class="en">Claude 3.5</span> و <span class="en">Gemini 1.5</span>.</li>
-                <li><strong>توليد الصور الخارقة (<span class="en">Text-to-Image</span>):</strong> تحويل خيالك لصور واقعية ومخططات مذهلة عبر محرك <span class="en">Flux Pro</span> الرائد ومحرك <span class="en">DALL-E 3</span>.</li>
+                <li>
+                    <i class="fa-solid fa-code-branch li-icon"></i>
+                    <strong>معالجة النصوص والبرمجة:</strong> الوصول الفوري النماذج العالمية الأقوى مع كل نسخها 
+                    <span class="en">GPT-4o</span> و <span class="en">Claude 3.5</span> و <span class="en">Gemini 1.5</span>.
+                </li>
+                <li>
+                    <i class="fa-solid fa-palette li-icon"></i>
+                    <strong>توليد الصور الخارقة (<span class="en">Text-to-Image</span>):</strong> تحويل خيالك لصور واقعية ومخططات مذهلة عبر محرك 
+                    <span class="en">Flux Pro</span> الرائد ومحرك <span class="en">DALL-E 3</span>.
+                </li>
             </ul>
         </div>
 
-        <!-- ميزات توليد الأكواد والصور -->
+        <!-- بطاقة: القوة البرمجية والفنية والميزات الاستقراية -->
         <div class="card">
-            <h2>✨ القوة البرمجية والفنية</h2>
+            <h2><i class="fa-solid fa-layer-group"></i> القوة البرمجية والفنية</h2>
             <ul>
-                <li><strong>تطوير البرمجيات:</strong> كتابة أكواد كاملة، فحص الأخطاء (<span class="en">Debugging</span>)، وشرح الشفرات المعقدة بجميع لغات البرمجة.</li>
-                <li><strong>الرؤية وتوليد الصور:</strong> ميزة الرؤية (<span class="en">Vision</span>) لتحليل الصور وتحويل التصاميم المبدئية لأكواد جاهزة، مع التوليد الفوري من النص.</li>
-                <li><strong>استقرار تام بنسبة 100%:</strong> ميزة البحث المباشر في الويب مع تقنية التبديل التلقائي الذكي بين سيرفرات <span class="en">g4f</span> لضمان عدم انقطاع الخدمة أبداً.</li>
+                <li>
+                    <i class="fa-solid fa-laptop-code li-icon"></i>
+                    <strong>تطوير البرمجيات:</strong> كتابة أكواد كاملة، فحص الأخطاء (<span class="en">Debugging</span>)، وشرح الشفرات البرمجية المعقدة بجميع لغات البرمجة بدقة متناهية.
+                </li>
+                <li>
+                    <i class="fa-solid fa-eye li-icon"></i>
+                    <strong>الرؤية وتوليد الصور:</strong> ميزة الرؤية (<span class="en">Vision</span>) المتقدمة لتحليل ومحاكاة الصور وتحويل التصاميم المبدئية لأكواد جاهزة، مع التوليد الفوري والمباشر من النص.
+                </li>
+                <li>
+                    <i class="fa-solid fa-server li-icon"></i>
+                    <strong>استقرار تام بنسبة 100%:</strong> ميزة البحث المباشر فائق السرعة في الويب مع تقنية التبديل التلقائي الذكي بين سيرفرات <span class="en">g4f</span> العالمية لضمان عدم انقطاع الخدمة أو تعطلها أبداً.
+                </li>
             </ul>
         </div>
 
-        <!-- روابط الحقوق والدعم -->
-        <div class="links-title">🔗 انضم إلينا واكتشف المستقبل</div>
+        <!-- أزرار الحقوق والدعم والاتصال الاحترافية -->
+        <div class="links-title">
+            <i class="fa-solid fa-circle-nodes"></i> انضم إلينا واكتشف المستقبل الرقمي
+        </div>
         
         <div class="btn-container">
-            <a href="https://ilya-web2.github.io/ILYA/" target="_blank" class="btn">🌐 الموقع الرسمي للمبرمج</a>
-            <a href="https://t.me/swc_t" target="_blank" class="btn btn-secondary">📢 قناة التليجرام الرسمية</a>
-            <a href="https://t.me/swv_t" target="_blank" class="btn btn-secondary" style="border: 1px solid #f59e0b;">👨‍💻 المبرمج إيليا</a>
+            <a href="https://ilya-web2.github.io/ILYA/" target="_blank" class="btn">
+                <i class="fa-solid fa-globe"></i> الموقع الرسمي للمبرمج
+            </a>
+            <a href="https://t.me/swc_t" target="_blank" class="btn btn-secondary">
+                <i class="fa-brands fa-telegram"></i> قناة التليجرام الرسمية
+            </a>
+            <a href="https://t.me/swv_t" target="_blank" class="btn btn-secondary" style="border: 1px solid var(--purple-neon);">
+                <i class="fa-solid fa-user-gear"></i> المبرمج إيليا
+            </a>
         </div>
 
+        <!-- تذييل الصفحة -->
         <footer>
             جميع الحقوق محفوظة © <span class="en-bold">ILYA AI</span> 2026
         </footer>
