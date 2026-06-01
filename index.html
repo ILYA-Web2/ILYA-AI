@@ -489,9 +489,11 @@
         <!-- لوحة تيليمتري إحصائيات وعداد الزوار التلقائي المكتمل والمثالي تماماً -->
         <div class="telemetry-dashboard">
             <h2 style="font-size: 1.15rem; margin-bottom: 12px; justify-content: center;">
-                <i class="fa-solid fa-chart-line"></i>
+                <i class="fa-solid fa-chart-line"></i> Viewing 
+            </h2>
+            <div class="counter-grid">
                 <div class="counter-item">
-                    <span class="counter-label">visit</span>
+                    <span class="counter-label">ㅤ</span>
                     <span id="global-counter" class="counter-value total">32</span>
                 </div>
             </div>
@@ -522,7 +524,7 @@
             let globalBase = localStorage.getItem("ilya_global_views_sim");
             if (!globalBase) {
                 // وضع حجر أساس لعدد زيارات فخم يليق بالمشروع
-                globalBase = 1482903;
+                globalBase = 32;
             } else {
                 globalBase = parseInt(globalBase) + 1;
             }
